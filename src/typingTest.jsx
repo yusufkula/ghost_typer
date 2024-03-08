@@ -1,23 +1,42 @@
 import React, { useState, useRef } from "react";
-
-
-const getRandomText = () => `react bitcoin run ghost cyberpunk macbook 
-linux develop tesla iphone coding world mars kick turn 
-logitech keyboard follow come early work find 
-make possible`.split(' ').sort(() => Math.random() > 0.5 ? 1 : -1)
+import getRandomText from "./RandomText";
+import Word from "./Word";
 
 const TypingTest = () => {
     const [userInput, setUserInput] = useState("")
     const text = useRef(getRandomText())
+    const [activeWordIndex, setActiveWordIndex] = useState(0)
+
+    const processInput = (value) => {
+        if (value.endsWith(' ')) {
+            setActiveWordIndex(i => i + 1);
+            setUserInput("");
+        } else {
+            setUserInput(value)
+        }
+    }
 
 
     return (
-        <div>
-            <input type="text"
-                placeholder="Start typing here..."
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)} />
-            <p className="text-light">{text.current.join(' ')}</p>
+        <div className=" typeArea">
+            <div className="textArea">
+                <h3 className="text-light">{text.current.map((word, index) => {
+                    return (
+                        <Word
+                            text={word}
+                            active={index === activeWordIndex}
+                        />
+                    )
+                })}</h3>
+            </div>
+            <div className="inputArea">
+                <input type="text"
+                    className=""
+                    placeholder="Start typing here..."
+                    value={userInput}
+                    onChange={(e) => processInput(e.target.value)} />
+            </div>
+
         </div>
     )
 }
