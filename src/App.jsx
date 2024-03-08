@@ -1,9 +1,14 @@
 import React from "react";
 import Heading from "./Heading";
+import TypingTest from "./typingTest";
 
 const App = () => {
     return (
-        <Heading />
+        <div className="App">
+            <Heading />
+            <TypingTest />
+        </div>
+
     )
 }
 
