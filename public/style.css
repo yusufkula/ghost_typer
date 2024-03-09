@@ -179,3 +179,8 @@ input {
   input:focus {
     animation: neonGlow 1.5s infinite alternate;
   }
+
+.githubLink{
+  text-decoration: none;
+  color: whitesmoke;
+}
