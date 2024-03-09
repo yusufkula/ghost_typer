@@ -40,7 +40,7 @@ const Timer = (props) => {
     return (
         <div>
             <h4 className="text-light">Time: {timeElapsed}</h4>
-            <h4 className="text-light">Speed: {speed} words per minute</h4>
+            <h4 className="text-light">Speed: <span className="speed">{speed} </span>wpm</h4>
 
             {/* Pass 'speed' and 'finished' as props to ResultPop */}
             <ResultPop speed={speed} finished={isGameFinished} onClose={handlePopClose} />

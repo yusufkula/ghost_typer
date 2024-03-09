@@ -10,6 +10,7 @@ const Word = (props) => {
         return <span className="incorrect">{text} </span>
     }
     if (active === true) {
+        console.log(active)
         return <span className="activeWord">{text} </span>
     }
     return <span>{text} </span>

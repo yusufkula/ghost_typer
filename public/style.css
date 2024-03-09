@@ -71,10 +71,8 @@
     max-width: 800px;
     min-width: 500px;
     border-radius: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 1rem;
     animation: glow 1.5s linear infinite;
-    margin-bottom: 2rem;
     padding: 1rem;
 }
 
@@ -83,28 +81,101 @@
 }
 
 .correct {
-    color: rgb(63,255,45);
+    color: #00ffcc;
     font-weight: bold;
 }
 
 .incorrect {
-    color: rgb(255,6,119);
+    color:#ff66b2;
 }
 
 .pop-screen {
     position: fixed;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid rgb(255, 255, 255);
-    width: 90%;
+    width: 900px;
+    min-width: 400px; /* Adjust max-width to your preference */
     height: 410px;
-    border-radius: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    animation: glow 1.5s linear infinite;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: whitesmoke;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.9); /* Dark background color */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    border-radius: 0.7rem;
+    color: #ffffff; /* White text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
+  
+  .pop-screen h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #00ffcc; /* Neon light blue title color */
+    transition: font-size 0.3s ease; /* Smooth transition for font-size */
+  }
+  
+  .pop-screen h2 {
+    font-size: 4em;
+    margin-bottom: 15px;
+  }
+  
+  .pop-screen button {
+    padding: 10px;
+    width: 150px;
+    height:60px;
+    font-size: larger;
+    background-color: rgb(255, 217, 0); /* Neon light yellow button color */
+    color: #1a1a1a; /* Dark text color */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background-color */
+    border-radius: 0.6rem;
+    &:hover {
+      background-color: #cccc00; /* Darker neon light yellow on hover */
+    }
+}
+  
+  
+  
+.speed{
+    color: #00ffcc;
+}
 
+input {
+    background-color: #222;
+    border: 1px solid #00ffcc;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+    margin: 1rem;
+  }
+  
+  input::placeholder {
+    color: #888;
+  }
+  
+  input:focus {
+    border-color: #98ffea;
+    box-shadow: 0 0 10px #98ffea;
+  }
+  
+  /* Optional: Add a neon glow effect */
+  @keyframes neonGlow {
+    0% {
+      box-shadow: 0 0 10px rgba(173, 216, 230, 0.7), 0 0 20px rgba(173, 216, 230, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 10px rgba(173, 216, 230, 0.9), 0 0 20px rgba(173, 216, 230, 0.9);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(173, 216, 230, 0.7), 0 0 20px rgba(173, 216, 230, 0.7);
+    }
+  }
+  
+  
+  input:focus {
+    animation: neonGlow 1.5s infinite alternate;
+  }
