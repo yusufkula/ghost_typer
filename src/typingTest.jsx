@@ -6,11 +6,20 @@ const TypingTest = () => {
     const [userInput, setUserInput] = useState("")
     const text = useRef(getRandomText())
     const [activeWordIndex, setActiveWordIndex] = useState(0)
+    const [correctWordArray, setCorrectWordArray] = useState([])
 
     const processInput = (value) => {
         if (value.endsWith(' ')) {
             setActiveWordIndex(i => i + 1);
             setUserInput("");
+
+            const word = value.trim()
+            setCorrectWordArray(data => {
+                const newResult = [...data]
+                newResult[activeWordIndex] = word === text.current[activeWordIndex]
+                return newResult
+            })
+
         } else {
             setUserInput(value)
         }
@@ -25,6 +34,7 @@ const TypingTest = () => {
                         <Word
                             text={word}
                             active={index === activeWordIndex}
+                            correct={correctWordArray[index]}
                         />
                     )
                 })}</h3>
