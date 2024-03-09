@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 
 const Word = (props) => {
     const { text, active, correct } = props
