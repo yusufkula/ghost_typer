@@ -37,12 +37,14 @@ const TypingTest = () => {
         }
     }
 
+    console.log(activeWordIndex === text.current.length)
 
     return (
         <div className=" typeArea">
             <Timer
                 startCounting={startCounting}
                 correctWords={correctWordArray.filter(Boolean).length}
+                allTyped={activeWordIndex === text.current.length}
             />
             <div className="textArea">
                 <h3 className="text-light">{text.current.map((word, index) => {
