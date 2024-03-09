@@ -1,14 +1,19 @@
 import React, { useState, useRef } from "react";
 import getRandomText from "./RandomText";
 import Word from "./Word";
+import Timer from './Timer'
 
 const TypingTest = () => {
     const [userInput, setUserInput] = useState("")
     const text = useRef(getRandomText())
     const [activeWordIndex, setActiveWordIndex] = useState(0)
     const [correctWordArray, setCorrectWordArray] = useState([])
+    const [startCounting, setStartCounting] = useState(false)
 
     const processInput = (value) => {
+
+        setStartCounting(true)
+
         if (value.endsWith(' ')) {
             setActiveWordIndex(i => i + 1);
             setUserInput("");
@@ -16,7 +21,7 @@ const TypingTest = () => {
             const word = value.trim()
             setCorrectWordArray(data => {
                 const newResult = [...data]
-                newResult[activeWordIndex] = word === text.current[activeWordIndex]
+                newResult[activeWordIndex] = (word === text.current[activeWordIndex])
                 return newResult
             })
 
@@ -28,6 +33,9 @@ const TypingTest = () => {
 
     return (
         <div className=" typeArea">
+            <Timer
+                startCounting={startCounting}
+            />
             <div className="textArea">
                 <h3 className="text-light">{text.current.map((word, index) => {
                     return (
