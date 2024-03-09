@@ -69,7 +69,7 @@
 .textArea{
     border: 3px solid  #ccc;
     max-width: 800px;
-    min-width: 500px;
+    min-width: 400px;
     border-radius: 1rem;
     margin: 1rem;
     animation: glow 1.5s linear infinite;
@@ -98,7 +98,7 @@
     min-width: 400px; /* Adjust max-width to your preference */
     height: 410px;
     padding: 20px;
-    background-color: rgba(26, 26, 26, 0.9); /* Dark background color */
+    background-color: rgba(26, 26, 26, 0.95); /* Dark background color */
     transition: all 0.3s ease; /* Smooth transition for all properties */
     border-radius: 0.7rem;
     color: #ffffff; /* White text color */
@@ -132,7 +132,7 @@
     transition: background-color 0.3s ease; /* Smooth transition for background-color */
     border-radius: 0.6rem;
     &:hover {
-      background-color: #cccc00; /* Darker neon light yellow on hover */
+      background-color: #ffff00; /* Darker neon light yellow on hover */
     }
 }
   
@@ -183,4 +183,11 @@ input {
 .githubLink{
   text-decoration: none;
   color: whitesmoke;
+}
+
+.infoBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -15,7 +15,7 @@ const ResultPop = (props) => {
         <div>
             {isPopVisible && (
                 <div className="pop-screen">
-                    <h1 className="Pop-screen-title">Results</h1>
+                    <h1 className="Pop-screen-title">Result</h1>
                     <h2>{speed} WPM</h2>
                     <button onClick={() => window.location.reload()}>Restart</button>
                 </div>
