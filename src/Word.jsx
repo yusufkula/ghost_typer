@@ -2,14 +2,9 @@ import React, { useRef, useEffect } from "react";
 
 const Word = (props) => {
     const { text, active, correct } = props
-    const rerender = useRef(0)
-
-    useEffect(() => {
-        rerender.current++
-    })
 
     if (correct === true) {
-        return <span className="correct">{text}({rerender.current}) </span>
+        return <span className="correct">{text} </span>
     }
     if (correct === false) {
         return <span className="incorrect">{text} </span>

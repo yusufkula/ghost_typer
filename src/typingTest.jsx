@@ -15,6 +15,13 @@ const TypingTest = () => {
         setStartCounting(true)
 
         if (value.endsWith(' ')) {
+
+            if (activeWordIndex === text.current.length) {
+                setStartCounting(false)
+                setUserInput('completed')
+                return
+            }
+
             setActiveWordIndex(i => i + 1);
             setUserInput("");
 
@@ -35,6 +42,7 @@ const TypingTest = () => {
         <div className=" typeArea">
             <Timer
                 startCounting={startCounting}
+                correctWords={correctWordArray.filter(Boolean).length}
             />
             <div className="textArea">
                 <h3 className="text-light">{text.current.map((word, index) => {
